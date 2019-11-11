@@ -276,9 +276,6 @@ func checkBucketNameCommon(bucketName string, strict bool) (err error) {
 	if len(bucketName) < 3 {
 		return errors.New("Bucket name cannot be smaller than 3 characters")
 	}
-	if len(bucketName) > 63 {
-		return errors.New("Bucket name cannot be greater than 63 characters")
-	}
 	if ipAddress.MatchString(bucketName) {
 		return errors.New("Bucket name cannot be an ip address")
 	}
